@@ -8,13 +8,11 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.macys.pages.HomePage;
 import com.macys.pages.SearchResultsPage;
-import com.macys.util.Utility;
 public class MacysTests {
 
 	WebDriver driver;
@@ -73,10 +71,8 @@ public class MacysTests {
 	    int actual = searchResultsPage.getItemsDescriptionCount(itemName);
 	    System.out.println("Actual count : "+actual);
 		int expected =Integer.parseInt(expectedItemCount);
-		System.out.println("Expected count : "+expected);
+		//System.out.println("Expected count : "+expected);
 		Assert.assertEquals(expected,actual);
-		
-		
 	}
 	@AfterClass
 	public void closeBrowser()
